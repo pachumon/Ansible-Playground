@@ -1,0 +1,6 @@
+ansible-playbook webserver.yml
+ansible-playbook webserver.yml --limit webserver01  to restrict play only to a target 
+
+ansible-playbook --syntax-check webserver.yml for syntax checking yml files
+
+ansible-playbook -C webserver.yml for dry run 
