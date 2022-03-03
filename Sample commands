@@ -1,0 +1,5 @@
+ansible all --limit webserver01 -m ping
+
+ansible all -m ping
+
+ansible all -m service -a "state=restarted name=sshd"
