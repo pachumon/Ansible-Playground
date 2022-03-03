@@ -1,5 +1,5 @@
-[webserver]
+[webservers]
 webserver01
 
-[dbserver]
+[dbservers]
 dbserver01
