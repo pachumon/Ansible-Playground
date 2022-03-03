@@ -3,3 +3,7 @@ ansible all --limit webserver01 -m ping
 ansible all -m ping
 
 ansible all -m service -a "state=restarted name=sshd"
+
+ansible webservers -m user -a "name=kunbidi password=sec_pwd state=present"
+
+module documentation details sample : ansible-doc ping
