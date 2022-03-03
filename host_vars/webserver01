@@ -1,0 +1,4 @@
+#host variables for webserver01
+---
+become_ask_pass: False
+custom_web_port: 3000
