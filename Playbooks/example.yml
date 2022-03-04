@@ -4,6 +4,14 @@
   become: true
   
   tasks:
+    - name: load variables from encrypted file
+      include_vars:
+        file: secret
+        
+    - name: display the encrypted variables
+      debug:
+        msg: "{{ secret }}"
+        
     - name: User
       user:
         name: "{{ username['test']['uname'] }}"
