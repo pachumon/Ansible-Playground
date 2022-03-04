@@ -11,6 +11,7 @@
     - name: display the encrypted variables
       debug:
         msg: "{{ secret }}"
+      no_log: true
         
     - name: User
       user:
