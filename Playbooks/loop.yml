@@ -1,6 +1,6 @@
 ---
 - name: new users are created
-  hosts: databases
+  hosts: dbservers
   become: true
   
   tasks:
