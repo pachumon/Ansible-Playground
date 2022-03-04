@@ -1,0 +1,5 @@
+# variables for webserver
+username:
+  test:
+    uname: test
+    description: test user account
