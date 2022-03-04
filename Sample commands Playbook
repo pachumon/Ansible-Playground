@@ -4,3 +4,5 @@ ansible-playbook webserver.yml --limit webserver01  to restrict play only to a t
 ansible-playbook --syntax-check webserver.yml for syntax checking yml files
 
 ansible-playbook -C webserver.yml for dry run 
+
+ansible-playbook  --ask-vault-pass ./Playbooks/example.yml use with vaultvalue to decrypt with prompt
