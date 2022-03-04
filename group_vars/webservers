@@ -3,3 +3,4 @@ username:
   test:
     uname: test
     description: test user account
+    password: "{{ secret }}"
