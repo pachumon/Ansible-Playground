@@ -6,7 +6,7 @@
   tasks:
     - name: load variables from encrypted file
       include_vars:
-        file: secret
+        file: ../secret
         
     - name: display the encrypted variables
       debug:
