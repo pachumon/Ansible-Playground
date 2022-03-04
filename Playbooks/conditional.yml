@@ -21,4 +21,4 @@
         name: "{{ item }}"
         state: present
       loop: "{{ web_users }}"
-      when: "'webservers' in group_name"
+      when: "'webservers' in group_names"
