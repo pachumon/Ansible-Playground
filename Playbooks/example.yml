@@ -2,11 +2,6 @@
 - name: new user is created
   hosts: webservers
   become: true
-  vars:
-    username: 
-      test:
-        uname: test
-        description: test user account
   
   tasks:
     - name: User
