@@ -4,3 +4,8 @@ username:
     uname: test
     description: test user account
     password: "{{ secret }}"
+
+web_users:
+  - member
+  - admin
+  - developer
