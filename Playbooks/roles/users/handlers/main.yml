@@ -1,6 +1,5 @@
 ---
 # handlers file for users
 
-  handlers:
-    - name: reboot system
-      reboot:
+- name: reboot system
+  reboot:
