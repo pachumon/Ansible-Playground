@@ -1,0 +1,28 @@
+---
+- name: sample lookup plugins
+  hosts: all
+  vars:
+    mxvar: "{{ query('dig', 'gmail.com', 'qtype=MX') }}"
+    amazon_ip_ranges: "{{ lookup('url', 'https://ip-ranges.amazonaws.com/ip-ranges.json', split_lines=False) }}"
+
+  
+  tasks:
+    - name: list each MX record for gmail.com
+      debug:
+        msg: mx record is {{ item }}
+      loop: "{{ mxvar }}"
+
+    - name: print name of each account in /etc/passwd
+      debug:
+        msg: user is {{ item | regex_replace(':.*$') }}
+      loop: "{{ query('lines', 'cat /etc/passwd') }}"
+
+    - name: diplay ipv4 address
+      debug:
+        msg: "{{ item['ip_prefix'] }}"
+      loop: "{{ amazon_ip_ranges['prefixes'] }}"
+
+    - name: diplay ipv6 address
+      debug:
+        msg: "{{ item['ipv6_prefix'] }}"
+      loop: "{{ amazon_ip_ranges['ipv6_prefixes'] }}"

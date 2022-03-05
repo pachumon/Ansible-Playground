@@ -1,0 +1,34 @@
+---
+- name: jinja filters sample
+  hosts: all
+  vars:
+    mylist:
+      - 2
+      - 4
+      - 6
+      - 4
+      - 6
+      - 7
+
+    myips:
+      - 192.0.2.1
+      - 10.0.0.1
+      - 304.252.1.200
+
+    myvslnips:
+      - 192.0.2.1/255.255.255.0
+      - 10.0.0.1/255.255.255.128
+      - 10.0.0.200/255.255.255.128
+
+  tasks:
+    - name: display sorted and unique list
+      debug:
+        msg: "{{ mylist | unique | sort }}"
+
+    - name: display list of valid ips
+      debug:
+        msg: "{{ myips | ipaddr }}"
+
+    - name: display list of cidr networks
+      debug:
+        msg: "{{ myvslnips | ipaddr('network/prefix') }}"
